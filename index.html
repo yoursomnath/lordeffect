@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Magic</title>
+</head>
+<body>
+  <div class="container">
+    <h1><span><i class="fa-solid fa-triangle-exclamation"></i></span>Dont Press The Button<span><i class="fa-solid fa-triangle-exclamation"></i></span></h1>
+    <div class="btn" onclick="vibrate()">Press Me</div>
+  </div>
+  <div class="lord"></div>
+</body>
+<script>
+  let cont = document.querySelector(".container");
+  let lord = document.querySelector(".lord");
+  let btn = document.querySelector(".btn");
+  let sfx = new Audio("lord.mp3");
+  btn.addEventListener('click',event =>{
+  setInterval(vibrate, 100);
+  })
+  function vibrate(){
+       navigator.vibrate(100000);
+       cont.classList.add('hilao');
+       lord.classList.add('lordVibe');
+       lord.style.height = "300px";
+       lord.style.width = "200px";
+       sfx.play();
+       sfx.volume = 1.0; 
+  }
+</script>
+</html>
